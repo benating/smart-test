@@ -69,6 +69,9 @@ resource "aws_iam_policy" "lambda-dynamodb-policy" {
 POLICY
 }
 
+
+# Allow lambda to log to cloudwatch
+
 resource "aws_cloudwatch_log_group" "http-lambda-cloudwatch-log-group" {
   name              = "/aws/lambda/${aws_lambda_function.http-lambda-function.function_name}"
   retention_in_days = 14
