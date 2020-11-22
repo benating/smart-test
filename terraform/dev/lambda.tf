@@ -21,7 +21,7 @@ resource "aws_lambda_function" "http-lambda-function" {
   source_code_hash = data.archive_file.http-lambda-zip.output_base64sha256
   function_name    = "smart-test-http-lambda"
   role             = aws_iam_role.http-lambda-role.arn
-  handler          = "lambda_get_function.lambda_handler"
+  handler          = "lambda_function.lambda_handler"
   runtime          = "python3.7"
 }
 
